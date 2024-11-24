@@ -1,6 +1,6 @@
 ---
 title: "Covid91 vaccine study Final2024"
-author: "Put your name here!"
+author: "Aylin Torres"
 output: 
   html_document:
     number_sections: true
@@ -26,15 +26,205 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 ## Males
 
+Question: how effective is the vaccine on males?
+
+# Method
+
+$h_0$ the vaccine is not effected in preventing covid 91 in males 
+$h_0$ the vaccine is effective in preventing covid 91 in males
+
+
+Infected~Sex
+Categorical ~ Categorical
+We will use a helper file Cat~Cat
+
+# Graphical 
+
+```{r}
+Male <- FinalDat[FinalDat$sex=="M",]
+```
+
+```{r}
+barchartGC(~infected + treatment,data=Male)
+barchartGC(~infected + treatment,data=Male, type="percent")
+```
+
+The bar chart shows that males who received the vaccine are less likely to cantact covid covid 91
+
+#Numerical
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=Male)
+rowPerc(table1)
+colPerc(table1)
+```
+The numerical data shows that within the placebo group 73.80% of males got infected with covid 911, while of the males who received the vaccine only 26.20% contracted covid91. Therefore this indicates that males who received the vaccine significantly educed the risk of contracting covid 91.
+
+
+##Inferential
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)   
+```
+
+The Chi square p value is 0.000000000000022 fisher exacted tesr shows the p value is .0000000000000022 which is lower than .05 so we rejected the null.
+
+##Conclusion
+
+The Chi-squared statistic is 77.867, with 1 degree of freedom, and the p-value is < 2.2e-16, which is extremely small. Since the p-value is far below the common significance level of 0.05, we reject the null hypothesis. The null hypothesis stated that there is no association between the treatment (placebo vs. vaccine) and the infection status (COVID-19 vs. OK).the vaccine group has a significantly lower infection rate (1.02%) compared to the placebo group (2.82%). This strongly suggests that the vaccine reduces the likelihood of COVID-19 infection compared to the placebo treatment.
 
 ## Females
 
+Question: How effective is the vsccine on females?
+
+##Methodsn
+
+$h_0$ the vaccine is not efected in preventing covid 91in females 
+$h_A$ the vaccine is effective on preventing covid91 in the females 
+
+Infected~Sex
+Categorical ~ Categorical
+We will use a helper file CAt~Cat
+
+##Graphical
+
+```{r}
+Female <- FinalDat[FinalDat$sex=="F",]  
+```
+
+```{r}
+barchartGC(~infected + treatment,data =Female)
+barchartGC(~infected + treatment,data =Female, type= "percent")
+
+```
+The bar chart shows that female that received the vaccine are less likely to contract covid 91
+
+##Numerical
+
+```{r}
+tabel1 <- xtabs(~infected + treatment, data=Female)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The numerical data shows that within the placboo group 64.93% of females got infected with covid 92, while of the females who received the vaccine only 35.07% contracted covid92. Therefore this indicates that the females who received the vaccine significantly reduced the risk of contracting covid91.
+
+#Inferential
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+the chi square test shows the p value .00000000000022 and the fisher exact test shows the p value is .000000000022 which is lower than 0.5 so we reject the null hypothesis 
+
+
+##Conclusion
+
+The bar chart shows that females that received the vaccine are less likely to contract covid 91. The numerical data shows that within the placebo group 2.82% of the females got infected with covid91. Therefore this indicates that the females who received the vaccine significantly reduced the risk of contracting covid91. The fisher exact test shows the p-value is .0000000000022 which is lower than 0.5 so we reject the null hypothesis.
+
 
 ## LGBTQ
+Question: How effective is the vaccine on LGBTQ?
 
+##Method 
 
+$H_0$ the vaccine is not effective in preventing covid91 in LGBTQ
+$H_0$ the vaccine is effective in preventing covid 91 in LGBTQ
+
+Infected~LGBTQ(gay)
+Categorical ~ Categorical
+We will use a helper file Cat~Cat
+
+##Graphical
+
+```{r}
+LBGTQ <- FinalDat[FinalDat$LGBTQ=='gay',]
+```
+
+```{r}
+barchartGC(~infected + treatment,data=LBGTQ)
+barchartGC(~infected + treatment,data=LBGTQ, type="percent" )
+```
+
+the bar chart shows that members if the LBGTQ community are less likely to contract covid 91 if your recived the vaccine.
+
+##Numerical
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=LBGTQ)
+rowPerc(table1)
+colPerc(table1)  
+```
+The numerical data shows that within the placebo group 80% of the LBGTQ
+community members got infected with covid91, while of the LBGTQ community members who received the vaccine only 20% contracted covid91.
+
+##Inferential
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+the chi square test p value is.0000000002266 and the fisher exact test shows the p value is .0000007269 which is lower than 0.05 so we reject the null.
+
+##Conclusion
+
+The bar chart shows that members if the LBGTQ community are less likely to contract covid 91 if your received the vaccine. The numerical data shows that within the placebo group 805 of tthe LBGTQ community members got infected with covid 91 while of the LBGTQ community members who receid the vaccine only 20% contracted covid 91. The fisher exact test shows the p value is .0000000007269 which is lower than .05 so we rejected the null hypothesis.
 
 ## Druggies
+
+Question: How effective is the vaccine on druggies?
+
+##Methods 
+
+$H_0$  The vaccine is not effective in preventing covid 91 in druggies
+$H_0$ The vaccine is effective in preventing covid 91 in druggies
+
+Infected~DrugUser
+Categorical ~ Categorical
+We will use a helper file Cat~Cat
+
+##graphical
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Overall Results and Conclusions
